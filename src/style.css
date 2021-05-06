@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.main-container {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #f5f5f5;
+}
+
+.static {
+  height: 90vh;
+  width: 30vw;
+  min-width: 400px;
+  background-color: white;
+  border-radius: 10rem 1rem 1rem 1rem;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0) !important;
+  border-radius: 50px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 0 50px 50px 0;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.recepie-list-container {
+  border-radius: 1rem;
+  width: 60vw;
+  height: 90vh;
+  background-color: white;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  justify-items: stretch;
+  -webkit-column-gap: 2rem;
+          column-gap: 2rem;
+  row-gap: 2rem;
+  overflow-y: scroll;
+  padding: 2rem;
+}
+
+.recepie-list-container article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-width: 250px;
+  height: 25vh;
+  max-height: 250px;
+  min-height: 220px;
+  overflow: hidden;
+  border-radius: 1rem;
+  -webkit-box-shadow: 0.2rem 0.2rem 1rem rgba(0, 0, 0, 0.25);
+          box-shadow: 0.2rem 0.2rem 1rem rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+
+.recepie-list-container article img {
+  width: 100%;
+}
+
+.recepie-list-container article .dish-card-overlay {
+  padding: 2rem;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: rgba(0, 0, 0, 0.35);
+  border-radius: 1rem;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.recepie-list-container article .dish-card-overlay:hover {
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
+
+.recepie-list-container article .dish-card-overlay h2 {
+  color: #fff;
+  font-weight: 700;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 2.2rem;
+  text-shadow: -0.15rem -0.15rem 0 grey;
+}
+
+.recepie-list-container article .dish-card-overlay p {
+  color: #fff;
+}
+
+@media (max-width: 1200px) {
+  .recepie-list-container {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    margin-left: 1rem;
+  }
+  .main-container {
+    padding: 1rem;
+  }
+}
+/*# sourceMappingURL=style.css.map */

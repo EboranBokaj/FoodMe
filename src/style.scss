@@ -1,0 +1,124 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+		"Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+// html {
+// 	scroll-behavior: smooth;
+// }
+
+.main-container {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+	background-color: #f5f5f5;
+}
+
+.static {
+	height: 90vh;
+	width: 30vw;
+	min-width: 400px;
+	background-color: white;
+	border-radius: 10rem 1rem 1rem 1rem;
+}
+
+/* width */
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: rgba(0, 0, 0, 0) !important;
+	border-radius: 50px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #888;
+	border-radius: 0 50px 50px 0;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
+
+.recepie-list-container {
+	border-radius: 1rem;
+	width: 60vw;
+	height: 90vh;
+	background-color: white;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	justify-items: stretch;
+	column-gap: 2rem;
+	row-gap: 2rem;
+	overflow-y: scroll;
+	padding: 2rem;
+	//border-top: 2rem solid #000;
+	//border-bottom: 2rem solid #000;
+
+	article {
+		display: flex;
+		//margin: 1rem auto;
+		align-items: center;
+		justify-content: center;
+		min-width: 250px;
+		height: 25vh;
+		max-height: 250px;
+		min-height: 220px;
+		overflow: hidden;
+		border-radius: 1rem;
+		box-shadow: 0.2rem 0.2rem 1rem rgba(0, 0, 0, 0.25);
+		// TODO: set background placeholder
+		//background-image: url(https://picsum.photos/id/215/400);
+		position: relative;
+		img {
+			width: 100%;
+		}
+		.dish-card-overlay {
+			padding: 2rem;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			background-color: rgba(0, 0, 0, 0.35);
+			border-radius: 1rem;
+			transition: 0.3s;
+			&:hover {
+				background-color: rgba(0, 0, 0, 0);
+				cursor: pointer;
+			}
+			h2 {
+				color: #fff;
+				font-weight: 700;
+				font-size: 2.5rem;
+				text-transform: uppercase;
+				text-align: center;
+				line-height: 2.2rem;
+				text-shadow: -0.15rem -0.15rem 0 grey;
+			}
+			p {
+				color: #fff;
+			}
+		}
+	}
+}
+@media (max-width: 1200px) {
+	.recepie-list-container {
+		grid-template-columns: 1fr;
+		margin-left: 1rem;
+	}
+	.main-container {
+		padding: 1rem;
+	}
+}

@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import DishCard from "./components/DishCard";
+import SearchForm from "./components/SearchForm";
+
+import "./style.css";
+import data from "./data";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<main className="main-container">
+			<SearchForm />
+			<section className="recepie-list-container">
+				{data.results.map((dish) => {
+					const { display, id, time } = dish;
+					return <DishCard key={id} {...dish} />;
+				})}
+			</section>
+		</main>
+	);
 }
 
 export default App;
